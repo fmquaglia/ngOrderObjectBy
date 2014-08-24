@@ -22,6 +22,8 @@ Then, in your application views:
 </ul>
 ```
 
+For an example see [test/index.html](https://github.com/fmquaglia/ngOrderObjectBy/blob/master/test/index.html).
+
 ##Tests
 
 You need [karma](https://www.npmjs.org/package/karma), [karma-jasmine](https://www.npmjs.org/package/karma-jasmine), [phantomjs](https://www.npmjs.org/package/phantomjs), [karma-phantom-js-launcher](https://www.npmjs.org/package/karma-phantomjs-launcher) and [angular-mocks](https://www.npmjs.org/package/angular-mocks) in order to run the tests.
