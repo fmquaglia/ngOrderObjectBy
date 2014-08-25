@@ -6,7 +6,7 @@ This filter was [created by **Justin Klemm**](http://justinklemm.com/angularjs-f
 
 ##Use
 
-Install as Bower dependency: ```bower install ngOrderObjectBy```.
+Install as Bower dependency: ```bower install angular-order-object-by```.
 
 Include on your Angular module's dependencies:
 
