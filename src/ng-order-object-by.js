@@ -10,9 +10,10 @@
           angular.forEach(items, function(item) {
             filtered.push(item);
           });
-          filtered.sort(function (a, b) {
-            return (a[field] > b[field] ? 1 : -1);
-          });
+		  function index(obj, i) {return obj[i];}
+		  filtered.sort(function (a, b) {
+			  return (field.split('.').reduce(index, a) > field.split('.').reduce(index, b) ? 1 : -1);
+		  });
           if (reverse) {
             filtered.reverse();
           }
