@@ -34,4 +34,4 @@ You need [karma](https://www.npmjs.org/package/karma), [karma-jasmine](https://w
 
 Feel free to fork, and submit your pull requests using a feature branch on your fork.
 
-Don't forget to add tests! ;-)
+Don't forget to add tests! :wink:
