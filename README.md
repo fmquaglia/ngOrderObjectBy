@@ -22,6 +22,14 @@ Then, in your application views:
 </ul>
 ```
 
+Thanks to @diegou work now sorting by children's sudocument's properties is supported:
+
+```html
+<ul>
+    <li ng-repeat="object in objects | orderObjectBy: 'property.criteria' : direction">...</li>
+</ul>
+```
+
 For an example see [test/index.html](https://github.com/fmquaglia/ngOrderObjectBy/blob/master/test/index.html).
 
 ##Tests
