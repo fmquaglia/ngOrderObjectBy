@@ -29,3 +29,9 @@ For an example see [test/index.html](https://github.com/fmquaglia/ngOrderObjectB
 You need [karma](https://www.npmjs.org/package/karma), [karma-jasmine](https://www.npmjs.org/package/karma-jasmine), [phantomjs](https://www.npmjs.org/package/phantomjs), [karma-phantom-js-launcher](https://www.npmjs.org/package/karma-phantomjs-launcher) and [angular-mocks](https://www.npmjs.org/package/angular-mocks) in order to run the tests.
 
 ```karma start karma.conf.js ```
+
+##Contributions
+
+Feel free to fork, and submit your pull requests using a feature branch on your fork.
+
+Don't forget to add tests! ;-)

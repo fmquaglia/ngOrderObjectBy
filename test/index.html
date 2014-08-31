@@ -10,7 +10,7 @@
       padding: 100px 0 0;
       font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     }
-    table, h1, p {
+    table, h1, p, code {
       width: 800px;
       margin: 0 auto 10px;
     }
@@ -38,6 +38,12 @@
     a:hover {
       text-decoration: underline;
     }
+    code {
+      display: block;
+      padding: 10px;
+      border-radius: 5px;
+      background: #CCCCCC;
+    }
   </style>
 </head>
 <body ng-controller="TestCtrl">
@@ -54,28 +60,65 @@
         <th>
           <a ng-click="setCriteria('age')">Age</a>
         </th>
+        <th>
+          <a ng-click="setCriteria('pet')">Pet</a>
+        </th>
+        <th>
+          <a ng-click="setCriteria('grades.math')">Grades: Math</a>
+        </th>
+        <th>
+          <a ng-click="setCriteria('grades.physics')">Grades: Physics</a>
+        </th>
+        <th>
+          <a ng-click="setCriteria('grades.computerScience')">Grades: Computer Science</a>
+        </th>
+
       </tr>
     </thead>
     <tr ng-repeat="person in people | orderObjectBy : criteria : direction">
       <td id="byName">{{ person.name }}</td>
       <td id="byAge">{{ person.age }}</td>
+      <td id="byPet">{{ person.pet }}</td>
+      <td id="byGradesMath">{{ person.grades.math }}</td>
+      <td id="byGradesPhysics">{{ person.grades.physics }}</td>
+      <td id="byGradesComputerScience">{{ person.grades.computerScience }}</td>
     </tr>
   </table>
+  <h1>Data:</h1>
+  <code>{{ people | json }}</code>
   <script type="text/javascript">
     angular.module('TestApp', ['ngOrderObjectBy'])
       .controller('TestCtrl', function($scope) {
         $scope.people = {
-          person_1: {
+          person_1 : {
             name: 'Amelia',
-            age: 30
+            age: 30,
+            pet: 'cat',
+            grades: {
+              math: 90,
+              physics: 80,
+              computerScience: 50
+            }
           },
-          person_2: {
+          person_2 : {
             name: 'Bernardette',
-            age: 20
+            age: 20,
+            pet: 'cat',
+            grades: {
+              math: 80,
+              physics: 90,
+              computerScience: 100
+            }
           },
-          person_3: {
+          person_3 : {
             name: 'Carol',
-            age: 40
+            age: 40,
+            pet: 'hedgehog',
+            grades: {
+              math: 100,
+              physics: 50,
+              computerScience: 100
+            }
           }
         };
         $scope.criteria = 'name';
