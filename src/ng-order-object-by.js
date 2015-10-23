@@ -5,7 +5,11 @@
     return angular
       .module('ngOrderObjectBy', [])
       .filter('orderObjectBy', function() {
-        return function (items, field, reverse) {
+        return function (items, field, reverse, numericStrings) {
+          function isNumeric(n) {
+            return !isNaN(parseFloat(n)) && isFinite(n);
+          }
+          
           var filtered = [];
           angular.forEach(items, function(item) {
             filtered.push(item);
@@ -20,7 +24,16 @@
             if (reducedA === reducedB) {
               comparator = 0;
             } else {
-              comparator = (reducedA > reducedB ? 1 : -1);
+              if (numericStrings) {
+                if (isNumeric(reducedA) && isNumeric(reducedB))
+                {
+                  comparator = (Number(reducedA) > Number(reducedB) ? 1 : -1);
+                }                 
+              } 
+              else
+              {
+                comparator = (reducedA > reducedB ? 1 : -1);
+              }
             }
             return comparator;
           });
