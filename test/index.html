@@ -16,12 +16,13 @@
     h1,
     p,
     code {
-      width: 800px;
+      width: 1000px;
       margin: 0 auto 10px;
     }
     
     table {
       border-collapse: collapse;
+      font-size: 12px;
     }
     
     thead {
@@ -72,7 +73,7 @@
     <thead>
       <tr>
         <th ng-class="{ 'selectedCriteria': criteria == 'key' }">
-          <a ng-click="setCriteria('key')">Name</a>
+          <a ng-click="setCriteria('key')">Key</a>
         </th>
         <th ng-class="{ 'selectedCriteria': criteria == 'name' }">
           <a ng-click="setCriteria('name')">Name</a>
