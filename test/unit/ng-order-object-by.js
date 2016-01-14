@@ -124,6 +124,7 @@ describe('Filter: orderObjectBy', function () {
   });
 
   it('should sort by roomNumber', function(){
+    console.log('numeric strings');
     expect(orderObjectBy(obj, 'roomNumber', false, true)).toEqual(
       [obj.person_1, obj.person_3, obj.person_2, obj.person_4]
     );
