@@ -13,7 +13,8 @@
           
           var filtered = [];
 
-          angular.forEach(items, function(item) {
+          angular.forEach(items, function(item, key) {
+            item.key = key;
             filtered.push(item);
           });
 

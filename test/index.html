@@ -71,6 +71,9 @@
   <table>
     <thead>
       <tr>
+        <th ng-class="{ 'selectedCriteria': criteria == 'key' }">
+          <a ng-click="setCriteria('key')">Name</a>
+        </th>
         <th ng-class="{ 'selectedCriteria': criteria == 'name' }">
           <a ng-click="setCriteria('name')">Name</a>
         </th>
@@ -96,6 +99,7 @@
       </tr>
     </thead>
     <tr ng-repeat="person in people | orderObjectBy : criteria : direction : numericStrings">
+      <td id="byKey">{{ person.key }}</td>
       <td id="byName">{{ person.name }}</td>
       <td id="byAge">{{ person.age }}</td>
       <td id="byPet">{{ person.pet }}</td>
