@@ -124,19 +124,19 @@ describe('Filter: orderObjectBy', function () {
   });
 
   it('should sort by roomNumber', function(){
-    expect(orderObjectBy(obj, 'roomNumber', false, true)).toEqual(
+    expect(orderObjectBy(obj, 'roomNumber', false)).toEqual(
       [obj.person_1, obj.person_3, obj.person_2, obj.person_4]
     );
   });
 
   it('should sort by roomNumber reverted', function(){
-    expect(orderObjectBy(obj, 'roomNumber', true, true)).toEqual(
+    expect(orderObjectBy(obj, 'roomNumber', true)).toEqual(
       [obj.person_4, obj.person_2, obj.person_3, obj.person_1]
     );
   });
 
   it('should sort by key', function(){
-    expect(orderObjectBy(obj, 'keu', false)).toEqual(
+    expect(orderObjectBy(obj, 'key', false)).toEqual(
       [obj.person_1, obj.person_2, obj.person_3, obj.person_4]
     );
   });
