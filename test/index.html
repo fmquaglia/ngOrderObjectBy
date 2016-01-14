@@ -99,7 +99,7 @@
 
       </tr>
     </thead>
-    <tr ng-repeat="person in people | orderObjectBy : criteria : direction : numericStrings">
+    <tr ng-repeat="person in people | orderObjectBy : criteria : direction">
       <td id="byKey">{{ person.key }}</td>
       <td id="byName">{{ person.name }}</td>
       <td id="byAge">{{ person.age }}</td>
@@ -110,7 +110,6 @@
       <td id="byRoomNumber">"{{ person.roomNumber }}"</td>
     </tr>
   </table>
-  <p><input type="checkbox" ng-model="numericStrings">If both values are numeric, compare them as numeric</p> 
   <h1>Data:</h1>
   <code>{{ people | json }}</code>
   <script type="text/javascript">
