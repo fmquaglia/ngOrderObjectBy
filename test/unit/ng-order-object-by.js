@@ -134,4 +134,17 @@ describe('Filter: orderObjectBy', function () {
       [obj.person_4, obj.person_2, obj.person_3, obj.person_1]
     );
   });
+
+  it('should sort by key', function(){
+    expect(orderObjectBy(obj, 'keu', false)).toEqual(
+      [obj.person_1, obj.person_2, obj.person_3, obj.person_4]
+    );
+  });
+
+  it('should sort by key reverted', function(){
+    expect(orderObjectBy(obj, 'key', true)).toEqual(
+      [obj.person_4, obj.person_3, obj.person_2, obj.person_1]
+    );
+  });
+
 });

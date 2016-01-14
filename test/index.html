@@ -16,12 +16,13 @@
     h1,
     p,
     code {
-      width: 800px;
+      width: 1000px;
       margin: 0 auto 10px;
     }
     
     table {
       border-collapse: collapse;
+      font-size: 12px;
     }
     
     thead {
@@ -71,6 +72,9 @@
   <table>
     <thead>
       <tr>
+        <th ng-class="{ 'selectedCriteria': criteria == 'key' }">
+          <a ng-click="setCriteria('key')">Key</a>
+        </th>
         <th ng-class="{ 'selectedCriteria': criteria == 'name' }">
           <a ng-click="setCriteria('name')">Name</a>
         </th>
@@ -96,6 +100,7 @@
       </tr>
     </thead>
     <tr ng-repeat="person in people | orderObjectBy : criteria : direction : numericStrings">
+      <td id="byKey">{{ person.key }}</td>
       <td id="byName">{{ person.name }}</td>
       <td id="byAge">{{ person.age }}</td>
       <td id="byPet">{{ person.pet }}</td>
@@ -115,7 +120,7 @@
           person_1 : {
             name: 'Amelia',
             age: 30,
-            roomNumber: "1",
+            roomNumber: '1',
             pet: 'cat',
             grades: {
               math: 90,
@@ -126,7 +131,7 @@
           person_2 : {
             name: 'Bernardette',
             age: 20,
-            roomNumber: "10",
+            roomNumber: '10',
             pet: 'cat',
             grades: {
               math: 80,
@@ -136,7 +141,7 @@
           },
           person_3 : {
             name: 'Carol',
-            roomNumber: "2.1",
+            roomNumber: '2.1',
             age: 40,
             pet: 'hedgehog',
             grades: {
@@ -147,7 +152,7 @@
           },
           person_4 : {
             name: 'Dave',
-            roomNumber: "A6",
+            roomNumber: 'A6',
             age: 70,
             pet: 'ocelot',
             grades: {
